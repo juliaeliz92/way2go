@@ -14,6 +14,8 @@ addLocaleData([...fr]);
 
 import AppBar from 'material-ui/AppBar';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import RaisedButton from 'material-ui/RaisedButton';
+import Add from 'material-ui/svg-icons/content/add-circle';
 
 class App extends React.Component {
     render() {
@@ -27,7 +29,7 @@ class App extends React.Component {
                             <AuthenticationMain />
                             <Grid fluid>
                               <Row>
-                                <Col xs={12} md={12}>
+                                <Col xs={12} md={12} lg={12}>
                                   <AppBar
                                     title="Client Admin"
                                     iconClassNameRight="muidocs-icon-navigation-expand-more"
@@ -35,11 +37,14 @@ class App extends React.Component {
                                 </Col>
                               </Row>
                               <Row>
-                                <Col xs={6} md={4}>
+                                <Col xs={4} md={6} lg={6}>
                                   <h2>List of Roles</h2>
                                 </Col>
-                                <Col xs={3} md={4}>
-                                  
+                                <Col xs={4} md={3} lg={3}>
+                                  <RaisedButton label="List of Users" backgroundColor="black" labelColor="white" style={{marginTop:"5%"}} />
+                                </Col>
+                                <Col xs={4} md={3} lg={3}>
+                                  <RaisedButton label="Add User" labelColor="purple" style={{marginTop:"5%"}} icon={<Add/>}/>
                                 </Col>
                               </Row>
                             </Grid>
