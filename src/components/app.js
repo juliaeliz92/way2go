@@ -12,7 +12,8 @@ import {Main as AuthenticationMain} from 'way2go-authentication';
 const locale = Storage().getValue(Storage().options.LOCALE);
 addLocaleData([...fr]);
 
-
+import AppBar from 'material-ui/AppBar';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 class App extends React.Component {
     render() {
@@ -24,6 +25,24 @@ class App extends React.Component {
                         <div>
                             <Main />
                             <AuthenticationMain />
+                            <Grid fluid>
+                              <Row>
+                                <Col xs={12} md={12}>
+                                  <AppBar
+                                    title="Client Admin"
+                                    iconClassNameRight="muidocs-icon-navigation-expand-more"
+                                  />
+                                </Col>
+                              </Row>
+                              <Row>
+                                <Col xs={6} md={4}>
+                                  <h2>List of Roles</h2>
+                                </Col>
+                                <Col xs={3} md={4}>
+                                  
+                                </Col>
+                              </Row>
+                            </Grid>
                         </div>
                     </IntlProvider>
             </Container>

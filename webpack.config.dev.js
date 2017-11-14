@@ -34,6 +34,12 @@ export default {
         loader: 'json'
       },
       {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader!postcss-loader',
+        include: path.join(__dirname, 'node_modules'), // oops, this also includes flexboxgrid
+        exclude: /flexboxgrid/ // so we have to exclude it
+      },
+      {
         test: /\.js$/,
         include: path.join(__dirname, 'src'),
         loaders: ['babel-loader']
